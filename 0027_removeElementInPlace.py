@@ -10,7 +10,6 @@ class Solution (CustomTestCase):
         
 
     def removeElement(self, nums: List[int], val: int) -> int:
-        print(f"Input: {nums}, {val}")
         # Initialize a pointer to the first element
         i = 0
         # Iterate through the list

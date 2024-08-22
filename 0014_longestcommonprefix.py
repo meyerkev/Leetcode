@@ -6,16 +6,12 @@ class Solution:
         if not strs:
             return ""
         
-        if len(strs) == 1:
-            return strs[0]
-        
-        prefix = ""
-        for i in range(len(strs[0])):
-            c = strs[0][i]
-            for s in strs[1:]:
-                if i >= len(s) or s[i] != c:
-                    return prefix
-            prefix += c
+        prefix = strs[0]
+
+        for i in range(1, len(strs)):
+            while prefix and strs[i].find(prefix) != 0:
+                prefix = prefix[:len(prefix)-1]
+
         return prefix
     
 if __name__ == "__main__":
