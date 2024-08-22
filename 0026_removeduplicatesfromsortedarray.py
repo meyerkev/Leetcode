@@ -1,7 +1,7 @@
 from typing import List, Tuple
-from util.tests import run_test_case_custom_test
+from util.tests import run_test_case_custom_test, CustomTestCase
 
-class Solution:
+class Solution (CustomTestCase):
     def test(self, input: List[int], expected: Tuple[int, List[int]]):
         result = self.removeDuplicates(input)
         assert result == expected[0], f"Expected {expected[0]} numbers, but got {result}"
