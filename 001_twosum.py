@@ -1,6 +1,6 @@
 from typing import List
 
-from util import run_test_case
+from util.tests import run_test_case
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
