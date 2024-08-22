@@ -28,3 +28,13 @@ def run_test_case_linked_list(function : Callable[..., Optional[ListNode]], inpu
     print(f"Result: {result_list}")
     print()
     assert result_list == expected_output
+
+class CustomTestCase:
+    def test(self, input, expected_output):
+        raise NotImplementedError()
+
+def run_test_case_custom_test(solution : CustomTestCase, input, expected_output):
+    print(f"Input: {input}")
+    print(f"Expected output: {expected_output}")
+    solution.test(input, expected_output)
+    print()
