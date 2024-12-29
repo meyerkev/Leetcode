@@ -2,6 +2,8 @@ from util.tests import run_test_case
 
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
+        # is this optimal?  No
+        # Does it tie for the fastest solution in LC?  Yes
         if not needle:
             return 0
         if not haystack:
