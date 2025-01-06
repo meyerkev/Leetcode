@@ -20,7 +20,13 @@ def run_test_case_any_order(function, input, expected_output):
 def run_test_case_linked_list(function : Callable[..., Optional[ListNode]], input, expected_output : list):
     print(f"Input: {input}")
     print(f"Expected output: {expected_output}")
-    result = function(convert_list_to_linked_list(input[0]), convert_list_to_linked_list(input[1]))
+    result = function(*[convert_list_to_linked_list(i) for i in input])
+    if result is None:
+        print("Result: None")
+        print()
+        assert expected_output is None
+        return
+    
     result_list = []
     while result:
         result_list.append(result.val)
