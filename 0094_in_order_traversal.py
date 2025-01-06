@@ -6,7 +6,7 @@ from typing import List, Optional
 
 class Solution(CustomTestCase):
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-        if not root or root.val is NotImplemented:
+        if root is None or root.val is NotImplemented:
             return []
 
         left_list = self.inorderTraversal(root.left)
