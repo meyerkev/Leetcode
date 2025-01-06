@@ -9,9 +9,6 @@ class Solution(CustomTestCase):
         """
         if not nums2:
             return
-        if not nums1:
-            nums1 = nums2
-            return
         i = m - 1
         j = n - 1
         k = m + n - 1
@@ -45,3 +42,4 @@ if __name__ == "__main__":
     run_test_case_custom_test(s, ([1,2,3,None, None, None], 3, [4,5,6], 3), [1,2,3,4,5,6])
     run_test_case_custom_test(s, ([-12,-11,-10,-9,-8,-7,-6,-5,-4,-3,-2,-1, None], 12, [0], 1), [-12,-11,-10,-9,-8,-7,-6,-5,-4,-3,-2,-1, 0])
     run_test_case_custom_test(s, ([0, None], 1, [1], 1), [0, 1])
+    run_test_case_custom_test(s, ([1, None], 1, [0], 1), [0, 1])

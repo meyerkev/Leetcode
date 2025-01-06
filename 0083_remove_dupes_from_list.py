@@ -9,14 +9,12 @@ class Solution:
         if not head:
             return None
         pre = head
-        tail = head.next
 
-        while tail:
-            if pre.val == tail.val:
-                pre.next = tail.next
+        while pre.next:
+            if pre.val == pre.next.val:
+                pre.next = pre.next.next
             else:
-                pre = tail
-            tail = tail.next
+                pre = pre.next
         return head
 
 if __name__ == "__main__":
