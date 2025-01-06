@@ -5,8 +5,6 @@ from util.tests import run_test_case
 
 class Solution:
     def searchInsert(self, nums: List[int], target: int) -> int:
-        if not nums:
-            return 0
         start = 0
         end = len(nums) - 1
         while start <= end:
