@@ -67,6 +67,16 @@ class TreeNode:
                 queue.append((layer + 1, current.right))
         print()
 
+    def height(self):
+        if not self:
+            return 0
+        return 1 + max(self.left.height() if self.left else 0, self.right.height() if self.right else 0)
+    
+    def count_nodes(self):
+        if not self:
+            return 0
+        return 1 + (self.left.count_nodes() if self.left else 0) + (self.right.count_nodes() if self.right else 0)
+
     # equals method for testing
     def __eq__(self, other):
         # left and right can either be None or a TreeNode
