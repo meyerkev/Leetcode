@@ -1,12 +1,16 @@
-from typing import List
+from typing import List, Optional, Any
 
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+from typing import Optional, TypeVar, Generic, List
+
+T = TypeVar("T")
+
+class ListNode(Generic[T]):
+    def __init__(self, val: T = 0, next: Optional["ListNode[T]"] = None) -> None:
+        self.val: T = val
+        self.next: Optional["ListNode[T]"] = next
 
     @classmethod
-    def from_list(cls, lst: List):
+    def from_list(cls, lst: List[T]) -> Optional["ListNode[T]"]:
         if not lst:
             return None
         head = cls(lst[0])
@@ -16,7 +20,7 @@ class ListNode:
             current = current.next
         return head
 
-def convert_list_to_linked_list(lst):
+def convert_list_to_linked_list(lst: List[T]) -> Optional[ListNode[T]]:
     return ListNode.from_list(lst)
 
 class TreeNode:
